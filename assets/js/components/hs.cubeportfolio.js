@@ -7,7 +7,7 @@
  *
  */
 
-;(function ($) {
+; (function ($) {
   'use strict';
 
   $.HSCore.components.HSCubeportfolio = {
@@ -89,10 +89,48 @@
           }],
           setMeidaQueries = JSON.parse(el.getAttribute('data-media-queries'));
 
+        // Custom JS
+        // Ethan Cannon
+        // 14/03/20
+        // Get the url and apply default filter based on passed content
+        // Issue: 
+        //      - When default filter with no pictures, unable to select another filter
+        // ==============================================
+        var url = window.location.toString(); // url of page
+        var filterToUse = '*'; // default filter, set differently depending on url parmas
+
+        if (url.indexOf('?') > -1) {
+
+          // get name of first param
+          var paramName = url.substring(
+            url.lastIndexOf("?") + 1,
+            url.lastIndexOf("=")
+          );
+
+          // catch any incorrect param here
+          if (paramName == 'filter') {
+
+            // get value of param
+            var paramValue = url.substring(
+              url.lastIndexOf("=") + 1
+            )
+
+            // check not null
+            if (paramValue != "") {
+              // set param value to filterToUse
+              filterToUse = '.' + paramValue;
+            }
+
+          }
+        } else {
+          // don't touch filter to use, leave as default
+        }
+
+        // ==============================================
         $this.cubeportfolio({
           filters: setControls,
           layoutMode: setLayout,
-          defaultFilter: '*',
+          defaultFilter: filterToUse,
           sortToPreventGaps: true,
           gapHorizontal: setXGap,
           gapVertical: setYGap,
