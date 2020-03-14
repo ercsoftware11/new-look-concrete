@@ -10,9 +10,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description"
-        content="New Look Concrete is a family owned business specialising in unique concrete designs. Contact us today for a free, no obligation quote.">
+        content="New Look Concrete is a family owned business specialising in unique concrete designs. With over 30 colours and virtually unlimited designs, we offer you more options to individualise your concrete area. Contact us today for a free, no obligation quote.">
     <meta name="keywords"
         content="new look concrete, new, look, concrete, spray, on, concrete, spray, pave, epoxy, flake epoxy, sandstone effect, metallic epoxy, industrial epoxy, stained concrete, sports coatings ">
+    <meta property="og:image"
+        content="https://s3-ap-southeast-2.amazonaws.com/newlookconcrete.com.au/assets/img/og-image.png" />
+    <meta property="og:type" content="website" />
 
     <!-- Favicon -->
     <link rel="shortcut icon" href="./favicon.ico">
@@ -451,7 +454,6 @@
     <script src="./assets/vendor/bootstrap/bootstrap.min.js"></script>
 
     <!-- JS Implementing Plugins -->
-    <script src="./assets/vendor/hs-megamenu/src/hs.megamenu.js"></script>
     <script src="./assets/vendor/svg-injector/dist/svg-injector.min.js"></script>
     <script src="./assets/vendor/dzsparallaxer/dzsparallaxer.js"></script>
     <script src="./assets/vendor/slick-carousel/slick/slick.js"></script>
@@ -467,14 +469,6 @@
     <!-- JS Plugins Init. -->
     <script>
         $(window).on('load', function () {
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                pageContainer: $('.container'),
-                breakpoint: 767.98,
-                hideTimeOut: 0
-            });
-
             // initialization of svg injector module
             $.HSCore.components.HSSVGIngector.init('.js-svg-injector');
 
